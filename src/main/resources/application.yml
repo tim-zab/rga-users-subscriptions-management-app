@@ -1,0 +1,23 @@
+server:
+  port: 8189
+  servlet:
+    context-path: /
+
+spring:
+  application:
+    name: rga-users-subscription-management-app
+  liquibase:
+    enabled: true
+    change-log: classpath:/db/changelog/liquibase-changelog.xml
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: ${DATASOURCE_URL:jdbc:postgresql://db:5432/example_db}
+    username: ${DATASOURCE_USERNAME:postgres}
+    password: ${DATASOURCE_PASSWORD:admin778}
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+jwt:
+  access:
+    secret: ${SECRET:mysecret46e5g4w64g64gr5g4ggihihihiojhkjkldwhhihyihojwfnlkn787wcHHhfhbfhf888}
+    expirationTime: ${EXPIRATION_TIME:7200}
